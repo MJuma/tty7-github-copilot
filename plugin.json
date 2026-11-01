@@ -1,0 +1,13 @@
+{
+  "name": "tty7-github-copilot",
+  "description": "Report GitHub Copilot CLI's status (working, waiting, done), session ID and working directory to the tty7 pane it runs in.",
+  "version": "0.1.0",
+  "author": {
+    "name": "M Juma"
+  },
+  "homepage": "https://github.com/MJuma/tty7-github-copilot",
+  "repository": "https://github.com/MJuma/tty7-github-copilot",
+  "license": "MIT",
+  "keywords": ["tty7", "terminal", "agent-status"],
+  "extensions": "extensions"
+}
