@@ -1,7 +1,7 @@
 {
   "name": "tty7-github-copilot",
   "description": "Report GitHub Copilot CLI's status (working, waiting, done), session ID and working directory to the tty7 pane it runs in.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "M Juma"
   },

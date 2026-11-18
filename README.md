@@ -35,7 +35,8 @@ session event stream. Thus:
 ## Requirements
 
 - tty7 on macOS or Linux (tested with 26.10.0)
-- GitHub Copilot CLI with experimental mode on (tested with 1.0.105). Copilot
+- GitHub Copilot CLI with experimental mode on (tested with 1.0.105 to
+  1.0.113). Copilot
   loads extensions only in experimental mode. Run `/experimental on` once.
 
 ## Install

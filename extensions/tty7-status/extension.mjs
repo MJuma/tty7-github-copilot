@@ -33,11 +33,23 @@
 //                             under 1000 also stops the wrong "done" from showing)
 //   TTY7_STATUS_DEBUG=1       log every report to stderr (the extension log)
 
-import { joinSession } from "@github/copilot-sdk/extension";
 import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, readlinkSync, realpathSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import { basename, dirname, join } from "node:path";
+
+// Copilot CLI 1.0.113 renamed the extension SDK from @github/copilot-sdk to
+// @microsoft/copilot-sdk, and its loader maps only the new name. Older CLIs
+// map only the old one, so try the new name first.
+async function loadSdk() {
+    try {
+        return await import("@microsoft/copilot-sdk/extension");
+    } catch (err) {
+        if (err?.code !== "ERR_MODULE_NOT_FOUND") throw err;
+        return await import("@github/copilot-sdk/extension");
+    }
+}
+const { joinSession } = await loadSdk();
 
 const AGENT = "copilot";
 const RUNNER_TIMEOUT_MS = 5000;
